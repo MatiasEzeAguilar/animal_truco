@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truco Argentino - Edición Completa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>🃏 TRUCO ARGENTINO</h1>
+    <div class="subtitle">Edición Completa</div>
+  </header>
+
+  <div class="topbar">
+    <div class="scoreboard">
+      <div class="score">
+        <div class="scoreName" id="leftName">COMPUTADORA</div>
+        <div class="scoreValue" id="leftScore">0</div>
+      </div>
+      <div class="score">
+        <div class="scoreName" id="rightName">VOS</div>
+        <div class="scoreValue" id="rightScore">0</div>
+      </div>
+    </div>
+
+    <div class="turnIndicator" id="turnIndicator"></div>
+    <div class="timerBox" id="timerBox" style="display: none;">⏱️ <span id="timerValue">30</span>s</div>
+    <button class="gray" onclick="newGame()">Nueva partida</button>
+  </div>
+
+  <div class="table">
+    <div class="player top">
+      <div class="playerTitle" id="topTitle">🤖 COMPUTADORA</div>
+      <div class="hand" id="topHand"></div>
+    </div>
+
+    <div class="tableInfo">
+      <div class="handInfo" id="handInfo">Mano: 1<br>Truco: Simple</div>
+      <div class="muestraBox" id="muestraBox">
+        <div class="muestraLabel">MUESTRA</div>
+        <div id="muestraArea"></div>
+      </div>
+    </div>
+
+    <div class="centerArea">
+      <div class="trickArea" id="trickArea"></div>
+    </div>
+
+    <div class="message" id="message"></div>
+    <div class="actions" id="actions">
+      <button id="btnFlorOmitida" class="btn-reclamo" style="display: none;">Reclamar flor omitida</button>
+      <button id="btnVerPuntos" class="btn-reclamo" style="display: none;">Reclamar ver puntos</button>
+    </div>
+
+    <div class="player bottom">
+      <div class="hand" id="bottomHand"></div>
+      <div class="playerTitle" id="bottomTitle">👤 VOS</div>
+    </div>
+  </div>
+
+  <div class="log" id="log"></div>
+
+  <div class="rules">
+    <b>TRUCO CON MUESTRA</b><br>
+    ⚔️ Espadas | 🪵 Bastos | 🪙 Oros | 🍷 Copas<br>
+    1 de espada &gt; 1 de basto &gt; 7 de espada &gt; 7 de oro &gt; 3 &gt; 2 &gt; 1 de copa/oro &gt; 12 &gt; 11 &gt; 10 &gt; 7 de copa/basto &gt; 6 &gt; 5 &gt; 4.
+    <br><br>
+    <b>ENVIDO</b><br>
+    Dos cartas del mismo palo: 20 + suma de valores (figuras valen 0).<br>
+    • Envido (2 pts) | Envido-Envido (4 pts) | Real Envido (+3 pts) | Falta Envido.
+    <br><br>
+    <b>FLOR</b><br>
+    Tres cartas del mismo palo (20 + suma de las tres cartas).
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modalBox">
+      <h2 id="modalTitle"></h2>
+      <div id="modalText"></div>
+      <div class="modalButtons" id="modalButtons"></div>
+    </div>
+  </div>
+
+  <div class="modeBox" id="modeBox">
+    <div class="modeContent">
+      <h2>🃏 Truco Argentino</h2>
+      <p>Elegí cómo querés jugar:</p>
+      <div class="modeChoice">
+        <button class="green" onclick="selectMode('cpu')">👤 Vos vs 🤖 Computadora</button>
+        <button class="blue" onclick="selectMode('2p')">👥 Dos jugadores</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

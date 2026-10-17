@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truco Animal - Edición Completa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>🐾 TRUCO ANIMAL</h1>
+    <div class="subtitle">Caninos | Felinos | Aves | Peces</div>
+  </header>
+
+  <div class="topbar">
+    <div class="scoreboard">
+      <div class="score">
+        <div class="scoreName" id="leftName">COMPUTADORA</div>
+        <div class="scoreValue" id="leftScore">0</div>
+      </div>
+      <div class="score">
+        <div class="scoreName" id="rightName">VOS</div>
+        <div class="scoreValue" id="rightScore">0</div>
+      </div>
+    </div>
+
+    <div class="turnIndicator" id="turnIndicator"></div>
+    <div class="timerBox" id="timerBox" style="display: none;">⏱️ <span id="timerValue">30</span>s</div>
+    <button class="gray" onclick="newGame()">Nueva partida</button>
+  </div>
+
+  <div class="table">
+    <div class="player top">
+      <div class="playerTitle" id="topTitle">🤖 COMPUTADORA</div>
+      <div class="hand" id="topHand"></div>
+    </div>
+
+    <div class="tableInfo">
+      <div class="handInfo" id="handInfo">Mano: 1<br>Truco: Simple</div>
+      <div class="muestraBox" id="muestraBox">
+        <div class="muestraLabel">MUESTRA</div>
+        <div id="muestraArea"></div>
+      </div>
+    </div>
+
+    <div class="centerArea">
+      <div class="trickArea" id="trickArea"></div>
+    </div>
+
+    <div class="message" id="message"></div>
+    <div class="actions" id="actions">
+      <button id="btnFlorOmitida" class="btn-reclamo" style="display: none;">Reclamar flor omitida</button>
+      <button id="btnVerPuntos" class="btn-reclamo" style="display: none;">Reclamar ver puntos</button>
+      <button id="btnVerFlor" class="btn-reclamo" style="display: none;">Ver Flor del Rival</button>
+    </div>
+
+    <div class="player bottom">
+      <div class="hand" id="bottomHand"></div>
+      <div class="playerTitle" id="bottomTitle">👤 VOS</div>
+    </div>
+  </div>
+
+  <div class="log" id="log"></div>
+
+  <div class="rules">
+    <b>TRUCO ANIMAL CON MUESTRA</b><br>
+    🐶 Caninos (Espadas) | 🐱 Felinos (Bastos) | 🦅 Aves (Oros) | 🐠 Peces (Copas)<br>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modalBox">
+      <h2 id="modalTitle"></h2>
+      <div id="modalText"></div>
+      <div class="modalButtons" id="modalButtons"></div>
+    </div>
+  </div>
+
+  <div class="modeBox" id="modeBox">
+    <div class="modeContent">
+      <h2>🐾 Truco Animal</h2>
+      <p>Elegí cómo querés jugar:</p>
+      <div class="modeChoice">
+        <button class="green" onclick="selectMode('cpu')">👤 Vos vs 🤖 Computadora</button>
+        <button class="blue" onclick="selectMode('2p')">👥 Dos jugadores</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
